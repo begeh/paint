@@ -1,5 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
+import floodfill from './images/floodfill.png';
+import pencil from './images/pencil.png';
 
 function App() {
   return (
@@ -10,7 +11,12 @@ function App() {
       <section className="main">
         <div className= "tools">
           <div className="toolbar">
-
+            <div className="tool-btn-container">
+              <img className="tool-btn-img" src={floodfill} />
+            </div>
+            <div className="tool-btn-container">
+              <img className="tool-btn-img" src={pencil} />
+            </div>
           </div>
         </div>
         <div className="canvas">

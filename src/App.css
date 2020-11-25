@@ -41,12 +41,28 @@
 }
 
 .toolbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   max-width: 200px;
   max-height: 500px;
   height: 80%;
   width: 80%;
   background-color: gray;
   border-radius: 4px; 
+}
+
+.tool-btn-container {
+  margin: 20px;
+  height: 80px;
+  width: 80px;
+  background-color: white;
+}
+
+.tool-btn-img {
+  height: 100%;
+  width: 100%;
 }
 
 .canvas{
