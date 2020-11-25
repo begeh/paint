@@ -27,18 +27,32 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
+  height: max-content;
 }
 
 .tools{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20%;
   height: 100%;
   background-color: orange;
 }
 
+.toolbar{
+  max-width: 200px;
+  max-height: 500px;
+  height: 80%;
+  width: 80%;
+  background-color: gray;
+  border-radius: 4px; 
+}
+
 .canvas{
   width: 80%;
-  height: 100%;
+  min-height: 100%;
+  height: max-content;
   background-color: red;
 }
 
