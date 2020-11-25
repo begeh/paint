@@ -22,8 +22,10 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="canvas">
+        <div className="canvas-container">
+          <div className="canvas">
 
+          </div>
         </div>
       </section>
     </div>

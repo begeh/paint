@@ -70,11 +70,17 @@
   width: 100%;
 }
 
-.canvas{
+.canvas-container{
   width: 80%;
   min-height: 100%;
   height: max-content;
   background-color: red;
+}
+
+.canvas{
+  width: 1152px;
+  height: 648px;
+  background-color: white;
 }
 
 .App-logo {
