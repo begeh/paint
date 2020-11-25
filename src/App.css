@@ -58,12 +58,13 @@
   height: 80px;
   width: 80px;
   background-color: white;
-  box-shadow: 3px 3px
+  box-shadow: 3px 3px;
 }
 
 .tool-btn-container:hover{
   border: 2px solid yellow;
   margin: 18px;
+  cursor: pointer;
 }
 
 .tool-btn-img {
