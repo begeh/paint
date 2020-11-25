@@ -60,6 +60,10 @@
   background-color: white;
 }
 
+.tool-btn-container:hover{
+  border: 2px solid yellow;
+}
+
 .tool-btn-img {
   height: 100%;
   width: 100%;
