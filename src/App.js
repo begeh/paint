@@ -17,6 +17,9 @@ function App() {
             <div className="tool-btn-container">
               <img className="tool-btn-img" src={pencil} />
             </div>
+            <div className="tool-btn-container">
+              <div style={{backgroundColor: 'white', width: '100%', height: '100%'}} />
+            </div>
           </div>
         </div>
         <div className="canvas">
