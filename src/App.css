@@ -50,7 +50,7 @@
   height: 80%;
   width: 80%;
   background-color: gray;
-  border-radius: 4px; 
+  border-radius: 10px; 
 }
 
 .tool-btn-container {
@@ -58,6 +58,7 @@
   height: 80px;
   width: 80px;
   background-color: white;
+  box-shadow: 3px 3px
 }
 
 .tool-btn-container:hover{

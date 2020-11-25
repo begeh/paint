@@ -24,7 +24,7 @@ function App() {
         </div>
         <div className="canvas-container">
           <div className="canvas">
-
+            
           </div>
         </div>
       </section>
