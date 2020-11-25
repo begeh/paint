@@ -1,9 +1,12 @@
 import './App.css';
+import { useState } from 'react';
 import floodfill from './images/floodfill.png';
 import pencil from './images/pencil.png';
 import { SketchPicker } from 'react-color';
 
 function App() {
+  const [ color, setColor ] = useState('#fff');
+
   return (
     <div className="App">
       {/* <SketchPicker /> */}
@@ -20,7 +23,7 @@ function App() {
               <img className="tool-btn-img" src={pencil} />
             </div>
             <div className="tool-btn-container">
-              <div style={{backgroundColor: 'white', width: '100%', height: '100%'}} />
+              <div style={{backgroundColor: color, width: '100%', height: '100%'}} />
             </div>
           </div>
         </div>
