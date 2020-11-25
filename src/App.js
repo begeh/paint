@@ -1,10 +1,12 @@
 import './App.css';
 import floodfill from './images/floodfill.png';
 import pencil from './images/pencil.png';
+import { SketchPicker } from 'react-color';
 
 function App() {
   return (
     <div className="App">
+      {/* <SketchPicker /> */}
       <section className="heading">
         <h1>PAINT</h1>
       </section>
