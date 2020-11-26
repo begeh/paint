@@ -6,6 +6,7 @@ import { SketchPicker } from 'react-color';
 
 function App() {
   const [ color, setColor ] = useState('#fff');
+  const [tool, setTool] = useState(null);
 
   return (
     <div className="App">
@@ -16,10 +17,16 @@ function App() {
       <section className="main">
         <div className= "tools">
           <div className="toolbar">
-            <div className="tool-btn-container">
+            <div 
+              className={`tool-btn-container ${tool === 'flood-fill' && "tool-btn-clicked"}`}
+              onClick={() => setTool('flood-fill')}
+            >
               <img className="tool-btn-img" src={floodfill} />
             </div>
-            <div className="tool-btn-container">
+            <div 
+              className={`tool-btn-container ${tool === 'pencil' && "tool-btn-clicked"}`}
+              onClick={() => setTool('pencil')}
+            >
               <img className="tool-btn-img" src={pencil} />
             </div>
             <div className="tool-btn-container">
@@ -27,8 +34,8 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="canvas-container">
-          <div className="canvas">
+        <div className="canvas">
+          <div>
             
           </div>
         </div>

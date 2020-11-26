@@ -67,6 +67,12 @@
   cursor: pointer;
 }
 
+.tool-btn-clicked{
+  box-shadow: none;
+  border: 4px solid blue;
+  margin: 16px;
+}
+
 .tool-btn-img {
   height: 100%;
   width: 100%;
@@ -76,7 +82,7 @@
   width: 80%;
   min-height: 100%;
   height: max-content;
-  background-color: red;
+  background-color: #fff;
 }
 
 .canvas{
