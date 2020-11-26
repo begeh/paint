@@ -7,6 +7,8 @@ import { SketchPicker } from 'react-color';
 function App() {
   const [ color, setColor ] = useState('#fff');
   const [tool, setTool] = useState(null);
+  const [dimensions, setDimensions] = useState({ height: 16, width: 32 });
+  const { height, width } = dimensions;
 
   return (
     <div className="App">
@@ -35,7 +37,8 @@ function App() {
           </div>
         </div>
         <div className="canvas">
-          <div>
+          <div className="squares"
+          style={{width: `calc(80vw/${width})`, height: `calc(80vh/${height})`}}>
             
           </div>
         </div>

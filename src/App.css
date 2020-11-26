@@ -45,10 +45,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 200px;
-  max-height: 500px;
-  height: 80%;
   width: 80%;
+  max-width: 200px;
+  height: 80%;
+  min-height: max-content;
   background-color: gray;
   border-radius: 10px; 
 }
@@ -78,18 +78,26 @@
   width: 100%;
 }
 
-.canvas-container{
+.squares{
+  border: black 2px solid;
+  height: 50px;
+  width: 50px;
+}
+
+.canvas{
+  display: flex;
+  justify-content: flex-start;
   width: 80%;
   min-height: 100%;
   height: max-content;
   background-color: #fff;
 }
 
-.canvas{
+/* .canvas{
   width: 1152px;
   height: 648px;
   background-color: white;
-}
+} */
 
 .App-logo {
   height: 40vmin;
