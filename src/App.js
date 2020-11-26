@@ -12,7 +12,7 @@ function App() {
   const createRow = () => {
     const row = [];
     for (let i = 1; i <= width; i++) {
-      row.push(<Square key={i} width={width} height={height} />);
+      row.push(<Square key={i} width={width} height={height} color={color} />);
     }
     return row;
   };
