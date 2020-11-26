@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import floodfill from './images/floodfill.png';
 import pencil from './images/pencil.png';
 import { SketchPicker } from 'react-color';
@@ -9,6 +9,22 @@ function App() {
   const [tool, setTool] = useState(null);
   const [dimensions, setDimensions] = useState({ height: 16, width: 32 });
   const { height, width } = dimensions;
+
+  const createRow = () => {
+    const row = []
+    for(let i = 1; i <= width; i++) {
+      row.push(
+        <div 
+          key={i}
+          className="squares"
+          style={{width: `calc(80vw/${width})`, height: `calc(80vh/${height})`}} 
+        />
+      )
+    }
+    return row;
+  }
+
+
 
   return (
     <div className="App">
@@ -37,10 +53,10 @@ function App() {
           </div>
         </div>
         <div className="canvas">
-          <div className="squares"
-          style={{width: `calc(80vw/${width})`, height: `calc(80vh/${height})`}}>
+          {/* <div className="squares"
+          style={{width: `calc(80vw/${width})`, height: `calc(80vh/${height})`}}> */}
+          {createRow()}
             
-          </div>
         </div>
       </section>
     </div>
