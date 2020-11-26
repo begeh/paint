@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import floodfill from './images/floodfill.png';
 import pencil from './images/pencil.png';
 import { SketchPicker } from 'react-color';
+import { findByLabelText } from '@testing-library/react';
 
 function App() {
   const [ color, setColor ] = useState('#fff');
@@ -22,6 +23,20 @@ function App() {
       )
     }
     return row;
+  }
+
+  const createCanvas = () => {
+    const canvas = [];
+    for(let i = 1; i <= height; i++) {
+      canvas.push(
+        <div style={{display: 'flex', msFlexDirection: "row"}}>
+          {
+            createRow()
+          }
+        </div>
+      )
+    }
+    return canvas;
   }
 
 
@@ -55,7 +70,7 @@ function App() {
         <div className="canvas">
           {/* <div className="squares"
           style={{width: `calc(80vw/${width})`, height: `calc(80vh/${height})`}}> */}
-          {createRow()}
+          {createCanvas()}
             
         </div>
       </section>

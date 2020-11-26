@@ -79,14 +79,14 @@
 }
 
 .squares{
-  border: black 2px solid;
+  /* border: black 1px solid; */
   height: 50px;
   width: 50px;
 }
 
 .canvas{
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: flex-start;
   width: 80%;
   min-height: 100%;
