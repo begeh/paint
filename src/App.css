@@ -58,7 +58,7 @@
   height: 80px;
   width: 80px;
   background-color: white;
-  box-shadow: 3px 3px;
+  box-shadow: 4px 4px;
 }
 
 .tool-btn-container:hover{
@@ -116,8 +116,10 @@
 }
 
 .popover{
-  position: 'absolute';
-  z-index: '2';
+  position: relative;
+  z-index: 10;
+  top: -160px;
+  left: 85px;
 }
 
 .cover{
