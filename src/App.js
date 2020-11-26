@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import floodfill from "./images/floodfill.png";
 import pencil from "./images/pencil.png";
 import { SketchPicker } from "react-color";
+import Square from "./components/Canvas/Square";
+import Tool from "./components/Toolbar/Tool";
 import { findByLabelText } from "@testing-library/react";
 
 function App() {
@@ -12,23 +14,14 @@ function App() {
   const { height, width } = dimensions;
   const [showColorPicker, setShowColorPicker] = useState(false);
 
-  const handleChangeColor = (color) => {
+  const handleSetColor = (color) => {
     setColor(color.hex);
   };
 
   const createRow = () => {
     const row = [];
     for (let i = 1; i <= width; i++) {
-      row.push(
-        <div
-          key={i}
-          className="grey-on-hover squares"
-          style={{
-            width: `calc(80vw/${width})`,
-            height: `calc(80vh/${height})`,
-          }}
-        />
-      );
+      row.push(<Square key={i} width={width} height={height} />);
     }
     return row;
   };
@@ -53,22 +46,18 @@ function App() {
       <section className="main">
         <div className="tools">
           <div className="toolbar">
-            <div
-              className={`tool-btn-container ${
-                tool === "flood-fill" && "tool-btn-clicked"
-              }`}
-              onClick={() => setTool("flood-fill")}
-            >
-              <img className="tool-btn-img" src={floodfill} />
-            </div>
-            <div
-              className={`tool-btn-container ${
-                tool === "pencil" && "tool-btn-clicked"
-              }`}
-              onClick={() => setTool("pencil")}
-            >
-              <img className="tool-btn-img" src={pencil} />
-            </div>
+            <Tool
+              tool={tool}
+              setTool={setTool}
+              toolType="flood-fill"
+              image={floodfill}
+            />
+            <Tool
+              tool={tool}
+              setTool={setTool}
+              toolType="pencil"
+              image={pencil}
+            />
             <div
               className="tool-btn-container"
               onClick={() => setShowColorPicker(!showColorPicker)}
@@ -77,7 +66,7 @@ function App() {
                 style={{
                   backgroundColor: color,
                   width: "100%",
-                  height: "100%"
+                  height: "100%",
                 }}
               />
               {showColorPicker && (
@@ -85,7 +74,7 @@ function App() {
                   <div className="cover" />
                   <SketchPicker
                     color={color}
-                    onChange={(color) => handleChangeColor(color)}
+                    onChange={(color) => handleSetColor(color)}
                   />
                 </div>
               )}
