@@ -17,7 +17,7 @@ function App() {
       row.push(
         <div 
           key={i}
-          className="squares"
+          className="grey-on-hover squares"
           style={{width: `calc(80vw/${width})`, height: `calc(80vh/${height})`}} 
         />
       )
