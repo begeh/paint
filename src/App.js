@@ -11,6 +11,10 @@ function App() {
   const [dimensions, setDimensions] = useState({ height: 16, width: 32 });
   const { height, width } = dimensions;
 
+  const handleChangeColor = (color) => {
+    setColor(color.hex);
+  };
+
   const createRow = () => {
     const row = []
     for(let i = 1; i <= width; i++) {
@@ -43,7 +47,10 @@ function App() {
 
   return (
     <div className="App">
-      {/* <SketchPicker /> */}
+      <SketchPicker
+        color={color}
+        onChange={ (color) => handleChangeColor(color)}
+      />
       <section className="heading">
         <h1>PAINT</h1>
       </section>
