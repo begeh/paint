@@ -4,6 +4,8 @@ A simple paint app that allows you to color squares on a canvas individually usi
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+(Deployed via Netlify - https://simply-paint.netlify.app)
+
 ## Dependencies
 
 - React-Color

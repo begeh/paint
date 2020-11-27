@@ -36,31 +36,6 @@ export default function Toolbar(props) {
   };
   return (
     <div className="toolbar">
-      <div className="dimensions-container">
-        <DimensionItem
-          title={`Canvas Height (max. ${Math.floor(windowHeight)}px)`}
-          handleChangeDimensions={handleChangeDimensions}
-          type="height"
-          placeholder="Height (in px)"
-          value={height}
-        />
-        <DimensionItem
-          title={`Canvas Width (max. ${Math.floor(windowWidth)}px)`}
-          handleChangeDimensions={handleChangeDimensions}
-          type="width"
-          placeholder="Width (in px)"
-          value={width}
-        />
-      </div>
-      {tools.map((item, index) => (
-        <Tool
-          key={index}
-          tool={tool}
-          setTool={setTool}
-          toolType={item.toolType}
-          image={item.image}
-        />
-      ))}
       <div
         className="tool-btn-container"
         onClick={() => setShowColorPicker(!showColorPicker)}
@@ -81,6 +56,31 @@ export default function Toolbar(props) {
             />
           </div>
         )}
+      </div>
+      {tools.map((item, index) => (
+        <Tool
+          key={index}
+          tool={tool}
+          setTool={setTool}
+          toolType={item.toolType}
+          image={item.image}
+        />
+      ))}
+      <div className="dimensions-container">
+        <DimensionItem
+          title={`Canvas Height (max. ${Math.floor(windowHeight)}px)`}
+          handleChangeDimensions={handleChangeDimensions}
+          type="height"
+          placeholder="Height (in px)"
+          value={height}
+        />
+        <DimensionItem
+          title={`Canvas Width (max. ${Math.floor(windowWidth)}px)`}
+          handleChangeDimensions={handleChangeDimensions}
+          type="width"
+          placeholder="Width (in px)"
+          value={width}
+        />
       </div>
     </div>
   );
