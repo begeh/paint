@@ -2,9 +2,19 @@ import { useState } from "react";
 import { SketchPicker } from "react-color";
 import Tool from "./Tool";
 import tools from "../../data/toolData";
+import DimensionItem from "./DimensionItem";
 
 export default function Toolbar(props) {
-  const { color, setColor, tool, setTool, height, width, setDimensions, dimensions } = props;
+  const {
+    color,
+    setColor,
+    tool,
+    setTool,
+    height,
+    width,
+    setDimensions,
+    dimensions,
+  } = props;
   const [showColorPicker, setShowColorPicker] = useState(false);
   const windowHeight = 0.8 * window.innerHeight;
   const windowWidth = 0.8 * window.innerWidth;
@@ -15,38 +25,32 @@ export default function Toolbar(props) {
 
   const handleChangeDimensions = ({ type, value }) => {
     if (type === "height") {
-      return Number(value > windowHeight) ? setDimensions({ ...dimensions, height: windowHeight }) : setDimensions({ ...dimensions, height: value });
+      return Number(value > windowHeight)
+        ? setDimensions({ ...dimensions, height: windowHeight })
+        : setDimensions({ ...dimensions, height: value });
     } else if (type === "width") {
-      return Number(value > windowWidth) ? setDimensions({ ...dimensions, width: windowWidth }) : setDimensions({ ...dimensions, width: value });
+      return Number(value > windowWidth)
+        ? setDimensions({ ...dimensions, width: windowWidth })
+        : setDimensions({ ...dimensions, width: value });
     }
   };
   return (
     <div className="toolbar">
       <div className="dimensions-container">
-        <div className="input-field">
-          <p className='dimensions-title'>Canvas Height (max. {windowHeight}px)</p>
-          <input
-            className="input-dimensions"
-            type="text"
-            placeholder="Height (in px)"
-            value={height}
-            onChange={(e) =>
-              handleChangeDimensions({ type: "height", value: e.target.value })
-            }
-          />
-        </div>
-        <div className="input-field">
-          <p className='dimensions-title'>Canvas Width (max. {windowWidth}px)</p>
-          <input
-            className="input-dimensions"
-            type="text"
-            placeholder="Width (in px)"
-            value={width}
-            onChange={(e) =>
-              handleChangeDimensions({ type: "width", value: e.target.value })
-            }
-          />
-        </div>
+        <DimensionItem
+          title={`Canvas Height (max. ${windowHeight}px)`}
+          handleChangeDimensions={handleChangeDimensions}
+          type="height"
+          placeholder="Height (in px)"
+          value={height}
+        />
+        <DimensionItem
+          title={`Canvas Width (max. ${windowWidth}px)`}
+          handleChangeDimensions={handleChangeDimensions}
+          type="width"
+          placeholder="Width (in px)"
+          value={width}
+        />
       </div>
       {tools.map((item, index) => (
         <Tool
