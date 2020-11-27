@@ -38,14 +38,14 @@ export default function Toolbar(props) {
     <div className="toolbar">
       <div className="dimensions-container">
         <DimensionItem
-          title={`Canvas Height (max. ${windowHeight}px)`}
+          title={`Canvas Height (max. ${Math.floor(windowHeight)}px)`}
           handleChangeDimensions={handleChangeDimensions}
           type="height"
           placeholder="Height (in px)"
           value={height}
         />
         <DimensionItem
-          title={`Canvas Width (max. ${windowWidth}px)`}
+          title={`Canvas Width (max. ${Math.floor(windowWidth)}px)`}
           handleChangeDimensions={handleChangeDimensions}
           type="width"
           placeholder="Width (in px)"
