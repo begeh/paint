@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# PAINT
+
+A simple paint app that allows you to color squares on a canvas individually using a pencil tool, or to flood fill the canvas using the flood fill tool. Uses react-color dependency to pick a color.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Dependencies
+
+- ReactJS
+- React-Color
 
 ## Available Scripts
 
@@ -13,11 +20,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
