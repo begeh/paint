@@ -1,18 +1,23 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Square from "./components/Canvas/Square";
 import Toolbar from "./components/Toolbar/Toolbar";
 
 function App() {
   const [color, setColor] = useState("#fff");
+  const [canvas, setCanvas] = useState([]);
   const [tool, setTool] = useState(false);
   const [dimensions, setDimensions] = useState({ height: 16, width: 32 });
   const { height, width } = dimensions;
 
+  useEffect(() => {
+    createCanvas();
+  }, []);
+
   const createRow = () => {
     const row = [];
     for (let i = 1; i <= width; i++) {
-      row.push(<Square key={i} width={width} height={height} color={color} />);
+      row.push(color);
     }
     return row;
   };
@@ -20,13 +25,29 @@ function App() {
   const createCanvas = () => {
     const canvas = [];
     for (let i = 1; i <= height; i++) {
-      canvas.push(
-        <div style={{ display: "flex", msFlexDirection: "row" }}>
-          {createRow()}
-        </div>
-      );
+      canvas.push(createRow());
     }
-    return canvas;
+    return setCanvas(canvas);
+  };
+
+  const renderCanvas = (canvas) => {
+    return canvas.map((row, index1) => (
+      <div key={index1} style={{ display: "flex", msFlexDirection: "row" }}>
+        {row.map((squareColor, index2) => (
+          <Square
+            key={`${index1}-${index2}`}
+            width={width}
+            height={height}
+            currentColor={squareColor}
+            newColor={color}
+            canvas={canvas}
+            setCanvas={setCanvas}
+            row={index1}
+            column={index2}
+          />
+        ))}
+      </div>
+    ));
   };
 
   return (
@@ -43,7 +64,7 @@ function App() {
             setTool={setTool}
           />
         </div>
-        <div className="canvas">{createCanvas()}</div>
+        <div className="canvas">{renderCanvas(canvas)}</div>
       </section>
     </div>
   );
