@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { SketchPicker } from "react-color";
-import Tool from "./Tool";
-import tools from "../../data/toolData";
 import DimensionItem from "./DimensionItem";
+import Tools from './Tools';
 
 export default function Toolbar(props) {
   const {
@@ -57,15 +56,7 @@ export default function Toolbar(props) {
           </div>
         )}
       </div>
-      {tools.map((item, index) => (
-        <Tool
-          key={index}
-          tool={tool}
-          setTool={setTool}
-          toolType={item.toolType}
-          image={item.image}
-        />
-      ))}
+      <Tools tool={tool} setTool={setTool} />
       <div className="dimensions-container">
         <DimensionItem
           title={`Canvas Height (max. ${Math.floor(windowHeight)}px)`}
