@@ -52,23 +52,23 @@
 }
 
 .tool-btn-container {
-  margin: 20px;
-  height: 80px;
-  width: 80px;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
   background-color: white;
   box-shadow: 4px 4px;
 }
 
 .tool-btn-container:hover{
   border: 2px solid yellow;
-  margin: 18px;
+  margin: 8px;
   cursor: pointer;
 }
 
 .tool-btn-clicked{
   box-shadow: none;
   border: 4px solid blue;
-  margin: 16px;
+  margin: 6px;
 }
 
 .tool-btn-img {
