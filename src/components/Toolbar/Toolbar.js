@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { SketchPicker } from "react-color";
-import floodfill from "../../images/floodfill.png";
-import pencil from "../../images/pencil.png";
 import Tool from "./Tool";
+import tools from '../../data/toolData';
 
 export default function Toolbar(props) {
   const { color, setColor, tool, setTool } = props;
@@ -11,12 +10,6 @@ export default function Toolbar(props) {
   const handleSetColor = (color) => {
     setColor(color.hex);
   };
-
-  //list of tools and their associated data to be rendered with Tool component
-  const tools = [
-    { toolType: "pencil", image: pencil },
-    { toolType: "flood-fill", image: floodfill },
-  ];
 
   return (
     <div className="toolbar">
