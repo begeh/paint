@@ -7,7 +7,7 @@ function App() {
   const [color, setColor] = useState("#fff");
   const [canvas, setCanvas] = useState([]);
   const [tool, setTool] = useState(false);
-  const [dimensions, setDimensions] = useState({ height: "500", width: "500" });
+  const [dimensions, setDimensions] = useState({ height: "500", width: "1000" });
   const { height, width } = dimensions;
   const canvasColumns = 16;
   const canvasRows = 32;
