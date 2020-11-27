@@ -7,8 +7,8 @@ function App() {
   const [color, setColor] = useState("#fff");
   const [tool, setTool] = useState(false);
   const [dimensions, setDimensions] = useState({
-    height: "500",
-    width: "1000",
+    height: "300",
+    width: "600",
   });
   const { height, width } = dimensions;
 
