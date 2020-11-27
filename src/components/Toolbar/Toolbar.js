@@ -6,6 +6,8 @@ import tools from "../../data/toolData";
 export default function Toolbar(props) {
   const { color, setColor, tool, setTool, height, width, setDimensions, dimensions } = props;
   const [showColorPicker, setShowColorPicker] = useState(false);
+  const windowHeight = 0.8 * window.innerHeight;
+  const windowWidth = 0.8 * window.innerWidth;
 
   const handleSetColor = (color) => {
     setColor(color.hex);
@@ -13,16 +15,16 @@ export default function Toolbar(props) {
 
   const handleChangeDimensions = ({ type, value }) => {
     if (type === "height") {
-      setDimensions({ ...dimensions, height: value });
+      return Number(value > windowHeight) ? setDimensions({ ...dimensions, height: windowHeight }) : setDimensions({ ...dimensions, height: value });
     } else if (type === "width") {
-      setDimensions({ ...dimensions, width: value});
+      return Number(value > windowWidth) ? setDimensions({ ...dimensions, width: windowWidth }) : setDimensions({ ...dimensions, width: value });
     }
   };
   return (
     <div className="toolbar">
       <div className="dimensions-container">
         <div className="input-field">
-          <p className='dimensions-title'>Canvas Height (in pixels)</p>
+          <p className='dimensions-title'>Canvas Height (max. {windowHeight}px)</p>
           <input
             className="input-dimensions"
             type="text"
@@ -34,7 +36,7 @@ export default function Toolbar(props) {
           />
         </div>
         <div className="input-field">
-          <p className='dimensions-title'>Canvas Width (in pixels)</p>
+          <p className='dimensions-title'>Canvas Width (max. {windowWidth}px)</p>
           <input
             className="input-dimensions"
             type="text"
