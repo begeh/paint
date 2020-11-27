@@ -2,7 +2,6 @@ import floodFill from '../../helpers/floodFill';
 
 export default function Square(props) {
   const {
-    key,
     width,
     height,
     currentColor,
@@ -28,7 +27,6 @@ export default function Square(props) {
 
   return (
     <div
-      key={key}
       className="grey-on-hover squares"
       style={{
         width: `calc(80vw/${width})`,

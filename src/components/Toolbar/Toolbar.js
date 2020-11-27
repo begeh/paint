@@ -12,15 +12,23 @@ export default function Toolbar(props) {
     setColor(color.hex);
   };
 
+  //list of tools and their associated data to be rendered with Tool component
+  const tools = [
+    { toolType: "pencil", image: pencil },
+    { toolType: "flood-fill", image: floodfill },
+  ];
+
   return (
     <div className="toolbar">
-      <Tool
-        tool={tool}
-        setTool={setTool}
-        toolType="flood-fill"
-        image={floodfill}
-      />
-      <Tool tool={tool} setTool={setTool} toolType="pencil" image={pencil} />
+      {tools.map((item, index) => (
+        <Tool
+          key={index}
+          tool={tool}
+          setTool={setTool}
+          toolType={item.toolType}
+          image={item.image}
+        />
+      ))}
       <div
         className="tool-btn-container"
         onClick={() => setShowColorPicker(!showColorPicker)}
