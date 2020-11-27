@@ -1,59 +1,16 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import Square from "./components/Canvas/Square";
+import { useState } from "react";
 import Toolbar from "./components/Toolbar/Toolbar";
+import Canvas from "./components/Canvas/Canvas";
 
 function App() {
   const [color, setColor] = useState("#fff");
-  const [canvas, setCanvas] = useState([]);
   const [tool, setTool] = useState(false);
-  const [dimensions, setDimensions] = useState({ height: "500", width: "1000" });
+  const [dimensions, setDimensions] = useState({
+    height: "500",
+    width: "1000",
+  });
   const { height, width } = dimensions;
-  const canvasColumns = 16;
-  const canvasRows = 32;
-
-  useEffect(() => {
-    createCanvas();
-  }, []);
-
-  const createRow = () => {
-    const row = [];
-    for (let i = 1; i <= canvasRows; i++) {
-      row.push("#fff");
-    }
-    return row;
-  };
-
-  const createCanvas = () => {
-    const canvas = [];
-    for (let i = 1; i <= canvasColumns; i++) {
-      canvas.push(createRow());
-    }
-    return setCanvas(canvas);
-  };
-
-  const renderCanvas = (canvas) => {
-    return canvas.map((row, index1) => (
-      <div key={index1} style={{ display: "flex", msFlexDirection: "row" }}>
-        {row.map((squareColor, index2) => (
-          <Square
-            key={`${index1}-${index2}`}
-            width={width}
-            height={height}
-            canvasColumns={canvasColumns}
-            canvasRows={canvasRows}
-            currentColor={squareColor}
-            newColor={color}
-            canvas={canvas}
-            setCanvas={setCanvas}
-            row={index1}
-            tool={tool}
-            column={index2}
-          />
-        ))}
-      </div>
-    ));
-  };
 
   return (
     <div className="App">
@@ -73,9 +30,7 @@ function App() {
             setDimensions={setDimensions}
           />
         </div>
-        <div className="canvas-container">
-          <div className="canvas" style={{ height: height, width: width }}>{renderCanvas(canvas)}</div>
-        </div>
+        <Canvas width={width} height={height} tool={tool} color={color} />
       </section>
     </div>
   );
