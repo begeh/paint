@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
 export default function Square(props) {
-  const { key, width, height, currentColor, newColor, canvas, setCanvas, row, column } = props;
+  const { key, width, height, currentColor, newColor, canvas, setCanvas, row, column, tool } = props;
 
   const handleSetSquareColor = (row, column, newColor, currentColor) => {
     if(newColor !== currentColor){
-      let newCanvas = JSON.parse(JSON.stringify(canvas));
-      newCanvas[row][column] = newColor;
-      setCanvas(newCanvas);
+      if(tool === 'pencil'){
+        let newCanvas = JSON.parse(JSON.stringify(canvas));
+        newCanvas[row][column] = newColor;
+        setCanvas(newCanvas);
+      }
     }
   }
   

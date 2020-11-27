@@ -9,6 +9,8 @@ function App() {
   const [tool, setTool] = useState(false);
   const [dimensions, setDimensions] = useState({ height: 16, width: 32 });
   const { height, width } = dimensions;
+  const canvasColumn = 16;
+  const canvasRow = 32;
 
   useEffect(() => {
     createCanvas();
@@ -16,15 +18,15 @@ function App() {
 
   const createRow = () => {
     const row = [];
-    for (let i = 1; i <= width; i++) {
-      row.push(color);
+    for (let i = 1; i <= canvasRow; i++) {
+      row.push("#fff");
     }
     return row;
   };
 
   const createCanvas = () => {
     const canvas = [];
-    for (let i = 1; i <= height; i++) {
+    for (let i = 1; i <= canvasColumn; i++) {
       canvas.push(createRow());
     }
     return setCanvas(canvas);
@@ -43,6 +45,7 @@ function App() {
             canvas={canvas}
             setCanvas={setCanvas}
             row={index1}
+            tool={tool}
             column={index2}
           />
         ))}
