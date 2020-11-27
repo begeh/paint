@@ -1,6 +1,14 @@
-# PAINT
+# PAINT (Desktop Only)
 
-A simple paint app that allows you to color squares on a canvas individually using a pencil tool, or to flood fill the canvas using the flood fill tool. Uses react-color dependency to pick a color.
+A simple paint app (desktop only) that allows you to color squares on a canvas individually using a pencil tool, or to flood fill the canvas using the flood fill tool. Uses react-color dependency to pick a color.
+
+To use:
+
+1. Select a color with the color palette tool (top of toolbar)
+2. Select a tool to use (subsequent toolbar items)
+3. Click on highlighted square of canvas to use tool
+
+- Dimensions of canvas may be altered in realtime by entering height and width values (in px) in toolbar. Canvas height and width can be increased up to the current size of the browser window.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
