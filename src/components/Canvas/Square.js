@@ -11,6 +11,8 @@ export default function Square(props) {
     row,
     column,
     tool,
+    canvasColumns,
+    canvasRows
   } = props;
 
   const handleSetSquareColor = (row, column, newColor, currentColor) => {
@@ -29,8 +31,8 @@ export default function Square(props) {
     <div
       className="grey-on-hover squares"
       style={{
-        width: `calc(80vw/${width})`,
-        height: `calc(80vh/${height})`,
+        width: `calc(${width}px/${canvasRows})`,
+        height: `calc(${height}px/${canvasColumns})`,
         backgroundColor: currentColor,
       }}
       onClick={() => handleSetSquareColor(row, column, newColor, currentColor)}

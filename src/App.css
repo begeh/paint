@@ -47,8 +47,8 @@
   flex-direction: column;
   width: 80%;
   max-width: 200px;
-  height: 80%;
-  min-height: max-content;
+  min-height: 80%;
+  height: max-content;
   background-color: gray;
   border-radius: 10px; 
 }
@@ -78,12 +78,51 @@
   width: 100%;
 }
 
+.dimensions-container{
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'center';
+  border: 2px solid white;
+  width: 80%;
+  height: min-content;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.dimensions-title{
+  margin-bottom: 0;
+  color: white;
+}
+
+.input-field{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.input-dimensions{
+  font-size: 15px;
+  height:30px;
+  width: 80%;
+  margin: 5px 0; 
+}
+
+.canvas-container{
+  width: 80%;
+  min-height: 100%;
+  height: max-content;
+  background-color: grey;
+}
+
 .canvas{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 80%;
-  min-height: 100%;
+  /* width: 80%;
+  min-height: 100%; */
+  width: max-content;
   height: max-content;
   background-color: #fff;
 }

@@ -7,7 +7,7 @@ function App() {
   const [color, setColor] = useState("#fff");
   const [canvas, setCanvas] = useState([]);
   const [tool, setTool] = useState(false);
-  const [dimensions, setDimensions] = useState({ height: 16, width: 32 });
+  const [dimensions, setDimensions] = useState({ height: "500", width: "500" });
   const { height, width } = dimensions;
   const canvasColumns = 16;
   const canvasRows = 32;
@@ -40,6 +40,8 @@ function App() {
             key={`${index1}-${index2}`}
             width={width}
             height={height}
+            canvasColumns={canvasColumns}
+            canvasRows={canvasRows}
             currentColor={squareColor}
             newColor={color}
             canvas={canvas}
@@ -65,9 +67,15 @@ function App() {
             setColor={setColor}
             tool={tool}
             setTool={setTool}
+            height={height}
+            width={width}
+            dimensions={dimensions}
+            setDimensions={setDimensions}
           />
         </div>
-        <div className="canvas">{renderCanvas(canvas)}</div>
+        <div className="canvas-container">
+          <div className="canvas" style={{ height: height, width: width }}>{renderCanvas(canvas)}</div>
+        </div>
       </section>
     </div>
   );
