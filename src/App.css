@@ -104,7 +104,8 @@
   font-size: 15px;
   height:30px;
   width: 80%;
-  margin: 5px 0; 
+  margin: 5px 0;
+  padding: 3px; 
 }
 
 .canvas-container{
