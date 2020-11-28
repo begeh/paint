@@ -29,7 +29,7 @@ export default function Square(props) {
 
   return (
     <div
-      className="grey-on-hover squares"
+      className="grey-on-hover"
       style={{
         width: `calc(${width}px/${canvasRows})`,
         height: `calc(${height}px/${canvasColumns})`,

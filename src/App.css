@@ -124,11 +124,6 @@
   background-color: #fff;
 }
 
-.squares{
-  height: 50px;
-  width: 50px;
-}
-
 .grey-on-hover {
   position: relative;
   cursor: pointer;
