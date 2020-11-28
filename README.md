@@ -1,6 +1,6 @@
-# PAINT (Desktop Only)
+# PAINT
 
-A simple paint app (desktop only) that allows you to color squares on a canvas individually using a pencil tool, or to flood fill the canvas using the flood fill tool. Uses react-color dependency to pick a color.
+A simple paint app that allows you to color squares on a canvas individually using a pencil tool, or to flood fill the canvas using the flood fill tool. Uses react-color dependency to pick a color. This app is currently only compatible with desktop/laptop screens.
 
 To use:
 
