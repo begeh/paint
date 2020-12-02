@@ -52,7 +52,7 @@ export default function Canvas(props) {
 
   return (
     <div className="canvas-container">
-      <div className="canvas" style={{ height: height, width: width }}>
+      <div className="canvas" style={{ height: `${height}px`, width: `${width}px` }}>
         {renderCanvas(canvas)}
       </div>
     </div>
