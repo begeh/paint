@@ -7,11 +7,11 @@ export default function Dimensions(props) {
 
   const handleChangeDimensions = ({ type, value }) => {
     if (type === "height") {
-      return Number(value > windowHeight)
+      return Number(value) > windowHeight
         ? setDimensions({ ...dimensions, height: windowHeight })
         : setDimensions({ ...dimensions, height: value });
     } else if (type === "width") {
-      return Number(value > windowWidth)
+      return Number(value) > windowWidth
         ? setDimensions({ ...dimensions, width: windowWidth })
         : setDimensions({ ...dimensions, width: value });
     }
