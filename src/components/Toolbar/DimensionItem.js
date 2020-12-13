@@ -5,7 +5,7 @@ export default function DimensionItem(props) {
       <p className="dimensions-title">{title}</p>
       <input
         className="input-dimensions"
-        type="text"
+        type="number"
         placeholder={placeholder}
         value={value}
         onChange={(e) =>
