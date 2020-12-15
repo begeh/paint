@@ -6,7 +6,7 @@ To use:
 
 1. Select a color with the color palette tool (top of toolbar)
 2. Select a tool to use (subsequent toolbar items)
-3. Click on highlighted square of canvas to use tool
+3. Click on highlighted square on canvas to use tool
 
 - Dimensions of canvas may be altered in realtime by entering height and width values (in px) into the toolbar. Canvas height and width can be increased up to the current size of the browser window.
 
