@@ -1,9 +1,17 @@
 import DimensionItem from "./DimensionItem";
+import { useScreenDimensions } from "../../helpers/hooks/useScreenDimensions";
+import { useEffect } from "react";
 
 export default function Dimensions(props) {
+  const screenDimensions = useScreenDimensions();
   const { dimensions, setDimensions, height, width } = props;
-  const windowHeight = Math.floor(0.8 * window.innerHeight);
-  const windowWidth = Math.floor(0.8 * window.innerWidth);
+  const windowHeight = Math.floor(0.8 * screenDimensions.height);
+  const windowWidth = Math.floor(0.8 * screenDimensions.width);
+
+  // Resize canvas when screen size changes
+  useEffect(() => {
+    handleChangeDimensions({ type: "both", value: dimensions });
+  }, [screenDimensions]);
 
   const handleChangeDimensions = ({ type, value }) => {
     if (type === "height") {
@@ -11,9 +19,13 @@ export default function Dimensions(props) {
         ? setDimensions({ ...dimensions, height: windowHeight })
         : setDimensions({ ...dimensions, height: value });
     } else if (type === "width") {
-      return Number(value) > windowWidth
+      return value > windowWidth
         ? setDimensions({ ...dimensions, width: windowWidth })
         : setDimensions({ ...dimensions, width: value });
+    } else if (type === "both") {
+      const newWidth = value.width > windowWidth ? windowWidth : value.width;
+      const newHeight = value.height > windowHeight ? windowHeight : value.height;
+      setDimensions({ width: newWidth, height: newHeight });
     }
   };
 
