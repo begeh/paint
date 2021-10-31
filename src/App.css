@@ -32,7 +32,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
   width: 20%;
   height: 100%;
   background-color: orange;
@@ -49,7 +48,6 @@
   height: max-content;
   background-color: gray;
   border-radius: 10px;
-  margin: auto;
 }
 
 .tool-btn-container {
