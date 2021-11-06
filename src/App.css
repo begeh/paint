@@ -172,3 +172,17 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+@media screen and (max-height: 650px) {
+  .popover {
+    position: absolute;
+    z-index: 10;
+    top: 20vh;
+    left: 20%;
+  }
+
+  .tools {
+    overflow-y: auto;
+    align-items: baseline;
+  }
+}
