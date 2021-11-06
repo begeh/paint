@@ -4,8 +4,8 @@ import Square from './Square';
 export default function Canvas(props) {
   const { width, height, tool, color } = props;
   const [canvas, setCanvas] = useState([]);
-  const canvasColumns = 16;
-  const canvasRows = 32;
+  const canvasColumns = 32;
+  const canvasRows = 16;
 
   useEffect(() => {
     createCanvas();
@@ -13,7 +13,7 @@ export default function Canvas(props) {
 
   const createRow = () => {
     const row = [];
-    for (let i = 1; i <= canvasRows; i++) {
+    for (let i = 1; i <= canvasColumns; i++) {
       row.push("#fff");
     }
     return row;
@@ -21,7 +21,7 @@ export default function Canvas(props) {
 
   const createCanvas = () => {
     const canvas = [];
-    for (let i = 1; i <= canvasColumns; i++) {
+    for (let i = 1; i <= canvasRows; i++) {
       canvas.push(createRow());
     }
     return setCanvas(canvas);
