@@ -174,7 +174,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-@media screen and (max-height: 650px) {
+@media screen and (max-height: 612px) {
   .popover {
     position: absolute;
     z-index: 10;
