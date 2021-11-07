@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Canvas from "./Canvas/Canvas";
-import Toolbar from "./Toolbar/Toolbar";
+import Canvas from "./Canvas";
+import Toolbar from "./Toolbar";
 
 const Main = () => {
   const [color, setColor] = useState("#fff");
