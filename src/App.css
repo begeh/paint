@@ -48,6 +48,7 @@
   height: max-content;
   background-color: gray;
   border-radius: 10px;
+  margin: 10px 0px;
 }
 
 .tool-btn-container {
@@ -174,7 +175,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-@media screen and (max-height: 612px) {
+@media screen and (max-height: 612px), screen and (max-width: 887px) {
   .popover {
     position: absolute;
     z-index: 10;
@@ -190,18 +191,19 @@ input[type="number"] {
 
 @media screen and (max-width: 437px) {
   .dimensions-container {
-    border: none
+    border: none;
   }
 
   .dimensions-title {
     color: black;
   }
 
-  .input-field{
+  .input-field {
     margin: 0;
   }
 
-  .toolbar{
+  .toolbar {
     background-color: orange;
+    margin: 0;
   }
 }
