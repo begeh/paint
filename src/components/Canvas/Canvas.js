@@ -11,6 +11,7 @@ export default function Canvas(props) {
     createCanvas();
   }, []);
 
+  // Generate array of color codes, initially all set to white (#fff) 
   const createRow = () => {
     const row = [];
     for (let i = 1; i <= canvasColumns; i++) {
@@ -19,6 +20,8 @@ export default function Canvas(props) {
     return row;
   };
 
+  /* Create a nested array of multiple rows containing lists of color codes, and set
+   it as the canvas state */
   const createCanvas = () => {
     const canvas = [];
     for (let i = 1; i <= canvasRows; i++) {
@@ -27,6 +30,7 @@ export default function Canvas(props) {
     return setCanvas(canvas);
   };
 
+  /* Map over each item in each row of the canvas state and inject each row item's color code into the Square component to generate an array of color coded squares. Render the array of Square components as the app's canvas */
   const renderCanvas = (canvas) => {
     return canvas.map((row, index1) => (
       <div key={index1} style={{ display: "flex", flexDirection: "row" }}>
