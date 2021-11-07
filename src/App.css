@@ -204,6 +204,6 @@ input[type="number"] {
 
   .toolbar {
     background-color: orange;
-    margin: 0;
+    margin: auto;
   }
 }
