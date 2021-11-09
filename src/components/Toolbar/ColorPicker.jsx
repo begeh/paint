@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { SketchPicker } from "react-color";
+import { MainContext } from "../Main";
 
-export default function ColorPicker(props) {
-  const { color, setColor } = props;
+export default function ColorPicker() {
+  const { color, setColor } = useContext(MainContext);
   const [showColorPicker, setShowColorPicker] = useState(false);
   const handleSetColor = (color) => {
     setColor(color.hex);

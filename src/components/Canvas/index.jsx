@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
-import Square from './Square';
+import { useState, useEffect, useContext } from "react";
+import { MainContext } from "../Main";
+import Square from "./Square";
 
-export default function Canvas(props) {
-  const { width, height, tool, color } = props;
+export default function Canvas() {
+  const { width, height, tool, color } = useContext(MainContext);
   const [canvas, setCanvas] = useState([]);
   const canvasColumns = 32;
   const canvasRows = 16;
@@ -11,7 +12,7 @@ export default function Canvas(props) {
     createCanvas();
   }, []);
 
-  // Generate array of color codes, initially all set to white (#fff) 
+  // Generate array of color codes, initially all set to white (#fff)
   const createRow = () => {
     const row = [];
     for (let i = 1; i <= canvasColumns; i++) {
@@ -37,8 +38,6 @@ export default function Canvas(props) {
         {row.map((squareColor, index2) => (
           <Square
             key={`${index1}-${index2}`}
-            width={width}
-            height={height}
             canvasColumns={canvasColumns}
             canvasRows={canvasRows}
             currentColor={squareColor}
@@ -46,7 +45,6 @@ export default function Canvas(props) {
             canvas={canvas}
             setCanvas={setCanvas}
             row={index1}
-            tool={tool}
             column={index2}
           />
         ))}
@@ -56,7 +54,10 @@ export default function Canvas(props) {
 
   return (
     <div className="canvas-container">
-      <div className="canvas" style={{ height: `${height}px`, width: `${width}px` }}>
+      <div
+        className="canvas"
+        style={{ height: `${height}px`, width: `${width}px` }}
+      >
         {renderCanvas(canvas)}
       </div>
     </div>

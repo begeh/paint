@@ -1,18 +1,18 @@
-import floodFill from '../../helpers/floodFill';
+import { useContext } from "react";
+import floodFill from "../../helpers/floodFill";
+import { MainContext } from "../Main";
 
 export default function Square(props) {
+  const { width, height, tool } = useContext(MainContext);
   const {
-    width,
-    height,
     currentColor,
     newColor,
     canvas,
     setCanvas,
     row,
     column,
-    tool,
     canvasColumns,
-    canvasRows
+    canvasRows,
   } = props;
 
   const handleSetSquareColor = (row, column, newColor, currentColor) => {

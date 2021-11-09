@@ -1,10 +1,11 @@
 import DimensionItem from "./DimensionItem";
 import { useScreenDimensions } from "../../helpers/hooks/useScreenDimensions";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { MainContext } from "../Main";
 
-export default function Dimensions(props) {
+export default function Dimensions() {
   const screenDimensions = useScreenDimensions();
-  const { dimensions, setDimensions, height, width } = props;
+  const { dimensions, setDimensions, height, width } = useContext(MainContext);
   const windowHeight = Math.floor(0.8 * screenDimensions.height);
   const windowWidth = Math.floor(0.8 * screenDimensions.width);
 

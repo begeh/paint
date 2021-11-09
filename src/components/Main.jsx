@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import Canvas from "./Canvas";
 import Toolbar from "./Toolbar";
+
+export const MainContext = createContext({});
 
 const Main = () => {
   const [color, setColor] = useState("#fff");
@@ -12,21 +14,23 @@ const Main = () => {
   const { height, width } = dimensions;
 
   return (
-    <section className="main">
-      <div className="tools">
-        <Toolbar
-          color={color}
-          setColor={setColor}
-          tool={tool}
-          setTool={setTool}
-          height={height}
-          width={width}
-          dimensions={dimensions}
-          setDimensions={setDimensions}
-        />
-      </div>
-      <Canvas width={width} height={height} tool={tool} color={color} />
-    </section>
+    <MainContext.Provider
+      value={{
+        color,
+        setColor,
+        tool,
+        setTool,
+        dimensions,
+        setDimensions,
+        height,
+        width,
+      }}
+    >
+      <section className="main">
+        <Toolbar />
+        <Canvas />
+      </section>
+    </MainContext.Provider>
   );
 };
 
